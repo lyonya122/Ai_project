@@ -8,6 +8,9 @@ class Settings(BaseSettings):
     openai_api_key: str = ""
     openai_model: str = "gpt-4o-mini"
     openai_base_url: str = "https://api.openai.com/v1"
+    openai_api_key: str | None = None
+    openai_image_model: str = "gpt-image-1"
+    openai_image_size: str = "1024x1024"
     app_cors_origins: str = "http://127.0.0.1:5173,http://localhost:5173"
     chroma_dir: str = "./data/chroma"
     upload_dir: str = "./data/uploads"

@@ -34,12 +34,12 @@ class SlideContent(BaseModel):
 class SlideDesign(BaseModel):
     slide_number: int
     layout: str
-    visual_idea: str
+    visual_idea: str = ""
     icon_hint: str = ""
-    emphasis: str = "balanced"
+    emphasis: str = "content"
     background_style: str = "light"
-    image_type: str = "icon"
-
+    image_type: str = "none"
+    image_path: str | None = None
 
 class ThemePalette(BaseModel):
     theme_name: str = "modern_corporate"
@@ -71,14 +71,15 @@ class PresentationDesign(BaseModel):
 class FinalSlide(BaseModel):
     slide_number: int
     title: str
-    bullets: List[str]
+    bullets: list[str]
     speaker_notes: str = ""
     layout: str = "title_and_bullets"
     visual_idea: str = ""
     icon_hint: str = ""
-    emphasis: str = "balanced"
+    emphasis: str = "content"
     background_style: str = "light"
-    image_type: str = "icon"
+    image_type: str = "none"
+    image_path: str | None = None
 
 
 class FinalPresentation(BaseModel):
